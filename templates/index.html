@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Homepage</title>
+
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+	<link href="../static/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+	<div id="page" >
+		<div id="logo">
+			<h1><a href="/index" id="logoLink">logo</a></h1>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="/home.html">Home</a></li>
+				<li><a href="/about.html">About</a></li>
+				<li><a href="/event.html">Create Events</a></li>
+                <li><a href="/event.html">Book Tickets</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<img src="{{url_for('static', filename='images/slide-1.jpg')}}" style="width:40%" />
+            <img src="{{url_for('static', filename='images/slide-2.jpg')}}" style="width:40%" />
+		</div>
+		<div id="footer">
+			<p>
+				Copyright 2017 Our Project
+			</p>
+		</div>
+	</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
